@@ -38,12 +38,15 @@ public class Star
 	
 	public void draw(Graphics g) 
 	{
+		int px = (int) map(this.x / (this.z + 20), 1, WindowInfo.WIDTH);
+		int py = (int) map(this.y / (this.z + 20), 1, WindowInfo.WIDTH);
 		int sx = (int) map(this.x / this.z, 1, WindowInfo.WIDTH);
 		int sy = (int) map(this.y / this.z, 1, WindowInfo.WIDTH);
 		
 		int r = 8 - (int)(map(this.z, WindowInfo.WIDTH, 8));
 		g.setColor(Color.WHITE);
-		g.fillOval(sx, sy, r, r);
+		//g.fillOval(sx, sy, r, r);
+		g.drawLine(sx, sy, px, py);
 	}
 	
 }
